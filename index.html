@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://use.typekit.net/fox6lzw.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <svg viewBox="25 25 50 50">
+            <circle r="20" cy="50" cx="50"></circle>
+        </svg>
+    </div>
+    <ul id="navbar">
+        <li id="logo"><a href="#" data-key="logo-text">ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ</a></li>
+
+        <div id="hamburger-menu" onClick="toggleMenue()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </ul>
+
+    <div id="menu-options" class="hidden">
+        <ul>
+            <li><a href="#about" onClick="toggleMenue()" data-key="menu-about">About</a></li>
+            <li><a href="#register" onClick="toggleMenue()" data-key="menu-register">Register</a></li>
+            <li><a href="#contact" onClick="toggleMenue()" data-key="menu-contact">Contact</a></li>
+        </ul>
+        <div id="language-buttons">
+            <button class="language-btn" data-lang="fa" onClick="changeLanguage()" data-key="fa-btn">فارسی</button>
+            <button class="language-btn" data-lang="ps" onClick="changeLanguage()" data-key="ps-btn">پښتو</button>
+            <button class="language-btn" data-lang="en" onClick="changeLanguage()"  data-key="en-btn">English</button>
+        </div>
+    </div>
+    <section id="start">
+        <img src="Real-Alcazar.jpg" alt="Background Image" class="background-image">
+        <div id="start-text">
+            <h1 data-key="start-title">Islamic Madrasa</h1>
+            <br>
+            <p data-key="start-description" id="quality-text"></p>
+        </div>
+        <span onClick="scrollDown" id="arrow" data-key="scroll-down">&darr;</span>
+    </section>
+    <hr>
+    <section id="about">
+        <div id="about-box">
+            <h1 id="about-us-title" data-key="about-title-header">About Us</h1>
+            <p id="text" data-key="about-description">
+                At [School Name], we are dedicated to fostering a nurturing and inclusive environment where Afghan children can thrive academically, spiritually, and culturally.
+            </p>
+            <a href="#curricilum" data-key="learn-more"><br>Learn More &rarr;</a> 
+        </div>
+    </section>
+    <hr>
+    <hr>
+    <section id="register">
+        <h2 data-key="register-title">Register</h2>
+        <p data-key="register-description">Registration form and details.</p>
+    </section>
+    <hr>
+    <hr>
+    <section id="contact">
+        <h2 data-key="contact-title">Contact Us</h2>
+        <p data-key="contact-description">Contact information and form.</p>
+    </section>
+    <hr>
+    <script src="script.js">
+    </script>
+</body>
+</html>
