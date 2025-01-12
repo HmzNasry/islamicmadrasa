@@ -134,6 +134,7 @@ document.querySelectorAll('.language-btn').forEach(button => {
 });
 
 function changeLanguage(language, events = [hideMenu, loadScreen]) {
+
     document.body.classList.remove("loaded");
     window.scrollTo(0, 0);
     const loader = document.getElementById("loading-screen");
@@ -177,12 +178,12 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "start-description": "توانمندسازی نسل بعد با دانش و ارزش‌ها",
             "scroll-down": "&darr;",
             "about-title-header": "درباره ما",
-            "about-description": "در [نام مدرسه]، ما به ایجاد یک محیط پرورشی و فراگیر متعهد هستیم که در آن کودکان افغان می‌توانند از نظر علمی، معنوی و فرهنگی شکوفا شوند.",
+            "about-description": ".ر مدرسه اسلامی، ما متعهد به پرورش یک محیط پرورش دهنده و فراگیر هستیم جاییکه اطفال افغان بتوانند از نظر علمی، معنوی و فرهنگی رونق یابند ",
             "learn-more": "یادگیری بیشتر &rarr;",
             "register-title": "ثبت نام",
-            "register-description": "فرم ثبت نام و جزئیات.",
+            "register-description": "فرم ثبت نام و جزئیات",
             "contact-title": "تماس با ما",
-            "contact-description": "اطلاعات تماس و فرم."
+            "contact-description": "اطلاعات تماس و فرم"
         },
         ps: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
@@ -196,12 +197,12 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "start-description": "د بل نسل لپاره د پوهې او ارزښتونو سره ځواکمن کول",
             "scroll-down": "&darr;",
             "about-title-header": "زموږ په اړه",
-            "about-description": "په [مدرسه نوم] کې، موږ د یو ملاتړ کونکي او ټولشموله چاپیریال رامینځته کولو ته ژمن یو چې په کې افغان ماشومان کولی شي په علمي، روحاني، او کلتوري توګه وده وکړي.",
+            "about-description": "په اسلامي مدرسو کې، موږ د روزنې او ټول شموله چاپیریال رامینځته کولو ته وقف شوي یو چیرې چې افغان ماشومان په علمي، روحاني او کلتوري توګه وده کولی شي",
             "learn-more": "نور زده کړئ &rarr;",
             "register-title": "د راجسټری",
-            "register-description": "د ثبت نام فورمه او تفصیل.",
+            "register-description": "د ثبت نام فورمه او تفصیل",
             "contact-title": "موږ سره اړیکه",
-            "contact-description": "د اړیکو معلومات او فورمه."
+            "contact-description": "د اړیکو معلومات او فورمه"
         }
     };
 
@@ -221,6 +222,7 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             
             rtlEligibleElements.forEach(rtlElement => {
                 if (language === 'fa' || language === 'ps') {
+                  document.body.classList.add('lang-mefaps');
                   rtlElement.style.textAlign = 'right';
                 } else {
                   rtlElement.style.textAlign = 'left';
