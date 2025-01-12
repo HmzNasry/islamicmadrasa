@@ -41,17 +41,27 @@ window.addEventListener('scroll', () => {
     setNavbarStyle(window.scrollY > 0); 
 });
 
-document.querySelectorAll('#menu-options a').forEach(link => {
-    link.addEventListener('click', () => {
-        const menu = document.getElementById('menu-options');
-        menu.classList.add('hidden');
-        menu.classList.remove('active');
-        const hamburger = document.getElementById('hamburger-menu');
-        hamburger.classList.remove('active');
-        if (window.scrollY === 0) {
-            setNavbarStyle(false);
-        }
+
+function hideMenu() {
+    const links = document.querySelectorAll('#menu-options a');
+    
+    links.forEach(link => {
+            const menu = document.getElementById('menu-options');
+            menu.classList.add('hidden');
+            menu.classList.remove('active');
+            
+            const hamburger = document.getElementById('hamburger-menu');
+            hamburger.classList.remove('active');
+            
+            if (window.scrollY === 0) {
+                setNavbarStyle(false);
+            }
     });
+}
+
+const links = document.querySelectorAll('#menu-options a');
+links.forEach(link => {
+    addEventListener('click', hideMenu());
 });
 
 function scrollDown() {
@@ -62,14 +72,15 @@ function scrollDown() {
     });
 }
 
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        document.body.classList.add("loaded");
+function loadScreen() {
         setTimeout(() => {
-            document.getElementById("loading-screen").remove();
+            document.body.classList.add("loaded");
+            document.getElementById("loading-screen").style.opacity = '0';
         }, 1000);
-    }, 500);
-});
+}
+
+window.addEventListener("load", loadScreen);
+
        
 window.addEventListener("load", () => {
     const taglines = [
@@ -116,108 +127,103 @@ window.addEventListener("load", () => {
 document.querySelectorAll('.language-btn').forEach(button => {
     button.addEventListener('click', function() {
         const selectedLang = this.getAttribute('data-lang');
+        setTimeout(() => {
         changeLanguage(selectedLang);
+    }, 800);
     });
 });
 
-function changeLanguage(language) {
+function changeLanguage(language, events = [hideMenu, loadScreen]) {
+    document.body.classList.remove("loaded");
+    window.scrollTo(0, 0);
+    const loader = document.getElementById("loading-screen");
+    loader.style.opacity = '1';
+
+    events.forEach(callback => {
+        if (typeof callback === "function") {
+            callback();
+        }
+    });
     const languageData = {
         en: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
-            menu: {
-                about: "About",
-                register: "Register",
-                contact: "Contact"
-            },
-            faBtn: "فارسی",
-            psBtn: "پښتو",
-            enBtn: "English",
-            start: {
-                title: "Islamic Madrasa",
-                description: "Empowering the next generation with knowledge and value"
-            },
-            scrollDown: "&darr;",
-            about: {
-                title: "About Us",
-                description: "At [School Name], we are dedicated to fostering a nurturing and inclusive environment where Afghan children can thrive academically."
-            },
-            learnMore: "Learn More &rarr;",
-            register: {
-                title: "Register",
-                description: "Registration form and details."
-            },
-            contact: {
-                title: "Contact Us",
-                description: "Contact information and form."
-            }
+            "menu-about": "About",
+            "menu-register": "Register",
+            "menu-contact": "Contact",
+            "fa-btn": "فارسی",
+            "ps-btn": "پښتو",
+            "en-btn": "English",
+            "start-title": "Islamic Madrasa",
+            "start-description": "Empowering the next generation with knowledge and value",
+            "scroll-down": "&darr;",
+            "about-title-header": "About Us",
+            "about-description": "At [School Name], we are dedicated to fostering a nurturing and inclusive environment where Afghan children can thrive academically.",
+            "learn-more": "Learn More &rarr;",
+            "register-title": "Register",
+            "register-description": "Registration form and details.",
+            "contact-title": "Contact Us",
+            "contact-description": "Contact information and form."
         },
         fa: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
-            menu: {
-                about: "درباره ما",
-                register: "ثبت نام",
-                contact: "تماس"
-            },
-            faBtn: "فارسی",
-            psBtn: "پښتو",
-            enBtn: "English",
-            start: {
-                title: "مدرسه اسلامی",
-                description: "توانمندسازی نسل بعد با دانش و ارزش‌ها"
-            },
-            scrollDown: "&darr;",
-            about: {
-                title: "درباره ما",
-                description: "در [نام مدرسه]، ما به ایجاد یک محیط پرورشی و فراگیر متعهد هستیم که در آن کودکان افغان می‌توانند از نظر علمی، معنوی و فرهنگی شکوفا شوند..."
-            },
-            learnMore: "یادگیری بیشتر &rarr;",
-            register: {
-                title: "ثبت نام",
-                description: "فرم ثبت نام و جزئیات."
-            },
-            contact: {
-                title: "تماس با ما",
-                description: "اطلاعات تماس و فرم."
-            }
+            "menu-about": "درباره ما",
+            "menu-register": "ثبت نام",
+            "menu-contact": "تماس",
+            "fa-btn": "فارسی",
+            "ps-btn": "پښتو",
+            "en-btn": "English",
+            "start-title": "مدرسه اسلامی",
+            "start-description": "توانمندسازی نسل بعد با دانش و ارزش‌ها",
+            "scroll-down": "&darr;",
+            "about-title-header": "درباره ما",
+            "about-description": "در [نام مدرسه]، ما به ایجاد یک محیط پرورشی و فراگیر متعهد هستیم که در آن کودکان افغان می‌توانند از نظر علمی، معنوی و فرهنگی شکوفا شوند.",
+            "learn-more": "یادگیری بیشتر &rarr;",
+            "register-title": "ثبت نام",
+            "register-description": "فرم ثبت نام و جزئیات.",
+            "contact-title": "تماس با ما",
+            "contact-description": "اطلاعات تماس و فرم."
         },
         ps: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
-            menu: {
-                about: "زموږ په اړه",
-                register: "د راجسټری",
-                contact: "موږ سره اړیکه"
-            },
-            faBtn: "فارسی",
-            psBtn: "پښتو",
-            enBtn: "English",
-            start: {
-                title: "اسلامي مدرسه",
-                description: "د بل نسل لپاره د پوهې او ارزښتونو سره ځواکمن کول"
-            },
-            scrollDown: "&darr;",
-            about: {
-                title: "زموږ په اړه",
-                description: "په [مدرسه نوم] کې، موږ د یو ملاتړ کونکي او ټولشموله چاپیریال رامینځته کولو ته ژمن یو..."
-            },
-            learnMore: "نور زده کړئ &rarr;",
-            register: {
-                title: "د راجسټری",
-                description: "د ثبت نام فورمه او تفصیل."
-            },
-            contact: {
-                title: "موږ سره اړیکه",
-                description: "د اړیکو معلومات او فورمه."
-            }
+            "menu-about": "زموږ په اړه",
+            "menu-register": "د راجسټری",
+            "menu-contact": "موږ سره اړیکه",
+            "fa-btn": "فارسی",
+            "ps-btn": "پښتو",
+            "en-btn": "English",
+            "start-title": "اسلامي مدرسه",
+            "start-description": "د بل نسل لپاره د پوهې او ارزښتونو سره ځواکمن کول",
+            "scroll-down": "&darr;",
+            "about-title-header": "زموږ په اړه",
+            "about-description": "په [مدرسه نوم] کې، موږ د یو ملاتړ کونکي او ټولشموله چاپیریال رامینځته کولو ته ژمن یو چې په کې افغان ماشومان کولی شي په علمي، روحاني، او کلتوري توګه وده وکړي.",
+            "learn-more": "نور زده کړئ &rarr;",
+            "register-title": "د راجسټری",
+            "register-description": "د ثبت نام فورمه او تفصیل.",
+            "contact-title": "موږ سره اړیکه",
+            "contact-description": "د اړیکو معلومات او فورمه."
         }
     };
 
-    const elements = document.querySelectorAll('[data-key]');
+    if (!languageData[language]) {
+        console.error(`Language '${language}' not supported.`);
+        return;
+    }
 
+    const selectedLanguageData = languageData[language];
+
+    const elements = document.querySelectorAll('[data-key]');
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
-        element.innerHTML = languageData[language][key]; 
+        if (selectedLanguageData[key]) {
+            element.innerHTML = selectedLanguageData[key];
+            
+        } else {
+            console.warn(`Key '${key}' not found for language '${language}'.`);
+        }
     });
+
 }
+
 
 
     
