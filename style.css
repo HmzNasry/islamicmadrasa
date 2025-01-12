@@ -454,6 +454,9 @@ body.loaded #loading-screen {
   }
 }
 
+.rtl {
+  text-align: right;
+}
 
 
 

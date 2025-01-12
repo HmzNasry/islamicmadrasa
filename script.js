@@ -143,6 +143,7 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
         if (typeof callback === "function") {
             callback();
         }
+
     });
     const languageData = {
         en: {
@@ -208,20 +209,28 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
         console.error(`Language '${language}' not supported.`);
         return;
     }
-
-    const selectedLanguageData = languageData[language];
-
     const elements = document.querySelectorAll('[data-key]');
+    const selectedLanguageData = languageData[language];
+    const rtlEligibleElements = document.querySelectorAll('[data-rtl]');
+
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
+        
         if (selectedLanguageData[key]) {
             element.innerHTML = selectedLanguageData[key];
+            
+            rtlEligibleElements.forEach(rtlElement => {
+                if (language === 'fa' || language === 'ps') {
+                  rtlElement.style.textAlign = 'right';
+                } else {
+                  rtlElement.style.textAlign = 'left';
+                }
+              });
             
         } else {
             console.warn(`Key '${key}' not found for language '${language}'.`);
         }
     });
-
 }
 
 
