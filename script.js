@@ -21,21 +21,29 @@ function toggleMenue() {
     const menu = document.getElementById('menu-options');
     const hamburger = document.getElementById('hamburger-menu');
     const navbar = document.getElementById("navbar");
-
     if (menu.classList.contains('hidden')) {
         menu.classList.remove('hidden');
         menu.classList.add('active');
         hamburger.classList.add('active');
         navbar.classList.add('menu-open'); 
     } else {
-        menu.classList.add('hidden');
-        menu.classList.remove('active');
-        hamburger.classList.remove('active');
-        navbar.classList.remove('menu-open'); 
-        if (window.scrollY === 0) {
-            setNavbarStyle(false);
-        }
+        setTimeout(() => {
+            menu.classList.add('hidden');
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+            navbar.classList.remove('menu-open'); 
+            if (window.scrollY === 0) {
+                setNavbarStyle(false);
+            }
+        }, 100); 
     }
+}
+
+function scrollUp() {
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 window.addEventListener('scroll', () => {
@@ -297,7 +305,34 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
     });
 }
 
+const navbarHeight = document.querySelector("#navbar").offsetHeight;
+
+function scrollForAbout() {
+    const aboutSection = document.getElementById("about");
+    const aboutOffsetTop = aboutSection.offsetTop - navbarHeight;
+    window.scrollTo({
+        top: aboutOffsetTop,
+        behavior: "smooth"
+    });
+}
+
+function scrollForContact() {
+    const contactSection = document.getElementById("contact");
+    const contactOffsetTop = contactSection.offsetTop - navbarHeight;
+    window.scrollTo({
+        top: contactOffsetTop,
+        behavior: "smooth"
+    });
+}
+
+function scrollForRegister() {
+    const registerSection = document.getElementById("register");
+    const registerOffsetTop = registerSection.offsetTop - navbarHeight;
+    window.scrollTo({
+        top: registerOffsetTop,
+        behavior: "smooth"
+    });
+}
 
 
-    
 

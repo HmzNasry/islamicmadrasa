@@ -18,7 +18,7 @@
     </div>
 
     <ul id="navbar">
-        <li id="logo"><a href="#" data-key="logo-text">ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ</a></li>
+        <li id="logo"><a data-key="logo-text" onClick="scrollUp()">ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ</a></li>
 
         <div id="hamburger-menu" onClick="toggleMenue()">
             <div class="line"></div>
@@ -28,10 +28,10 @@
     </ul>
 
     <div id="menu-options" class="hidden">
-        <ul>
-            <li><a href="#about" onClick="toggleMenue()" data-key="menu-about" data-rtl="true">About</a></li>
-            <li><a href="#register" onClick="toggleMenue()" data-key="menu-register" data-rtl="true">Register</a></li>
-            <li><a href="#contact" onClick="toggleMenue()" data-key="menu-contact" data-rtl="true">Contact</a></li>
+        <ul onClick="toggleMenue()">
+            <li><a data-key="menu-about" data-rtl="true" onClick="scrollForAbout()">About</a></li>
+            <li><a data-key="menu-register" data-rtl="true" onClick="scrollForRegister()">Register</a></li>
+            <li><a data-key="menu-contact" onClick="scrollForContact()" data-rtl="true">Contact</a></li>
         </ul>
         <div id="language-buttons">
             <button class="language-btn" data-lang="fa" onClick="changeLanguage()" data-key="fa-btn">فارسی</button>

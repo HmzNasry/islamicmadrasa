@@ -115,6 +115,7 @@ body {
   font-size: 1.2em;
   text-decoration: none;
   top: 50%;
+  cursor: pointer;
 }
 
 #logo a {
@@ -164,6 +165,7 @@ body {
   display: none;
   transition: all 0.3s ease;
   z-index: 1000;
+  cursor: pointer;
 }
 
 #menu-options ul {
