@@ -1,4 +1,6 @@
 
+document.getElementById('arrow').addEventListener('click', function() { this.style.animation = 'none'; });
+
 function setNavbarStyle(isScrolled) {
     const navbar = document.getElementById("navbar");
     const logoLink = document.getElementById('logo').querySelector('a');

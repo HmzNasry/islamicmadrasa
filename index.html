@@ -48,9 +48,13 @@
         </div>
         <span onClick="scrollDown()" id="arrow" data-key="scroll-down">&darr;</span>
     </section>
-    <hr>
     <section id="about">
-        <div id="about-box">
+       
+        <video autoplay muted id="about-video" src="video.mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-container"></div>
+                <div id="about-box">
             <h1 id="about-us-title" data-key="about-title-header" data-rtl="true">About Us</h1>
             <p id="text" data-key="about-description" data-rtl="true">
                 At Islamic Madrasa, we are dedicated to fostering a nurturing and inclusive environment where Afghan children can thrive academically, spiritually, and culturally.
@@ -71,7 +75,6 @@
         <h2 data-key="contact-title" data-rtl="true">Contact Us</h2>
         <p data-key="contact-description" data-rtl="true">Contact information and form.</p>
     </section>
-    <hr>
     <script src="script.js">
     </script>
 </body>
