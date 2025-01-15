@@ -28,17 +28,19 @@
     </ul>
 
     <div id="menu-options" class="hidden">
-        <ul onClick="toggleMenue()">
-            <li><a data-key="menu-about" data-rtl="true" onClick="scrollForAbout()">About</a></li>
-            <li><a data-key="menu-register" data-rtl="true" onClick="scrollForRegister()">Register</a></li>
-            <li><a data-key="menu-contact" onClick="scrollForContact()" data-rtl="true">Contact</a></li>
-            <li><a data-key="menu-class-info" onClick="scrollForClassInfo()" data-rtl="true">Class Info</a></li>
+        <ul>
+            <li onClick="toggleMenue()"><a data-key="menu-about" data-rtl="true" onClick="scrollForAbout()">About</a></li>
+            <li onClick="toggleMenue()"><a data-key="menu-register" data-rtl="true" onClick="scrollForRegister()">Register</a></li>
+            <li onClick="toggleMenue()"><a data-key="menu-contact" onClick="scrollForContact()" data-rtl="true">Contact</a></li>
+            <li onClick="toggleMenue()"><a data-key="menu-class-info" onClick="scrollForClassInfo()" data-rtl="true">Class Info</a></li>
+            <div id="language-title" data-key="language-title"><span>User Interface Language</span></div>
+            <div id="language-buttons">
+                <button onClick="toggleMenue()" class="language-btn" data-lang="fa" onClick="changeLanguage()" data-key="fa-btn">فارسی</button>
+                <button onClick="toggleMenue()" class="language-btn" data-lang="ps" onClick="changeLanguage()" data-key="ps-btn">پښتو</button>
+                <button onClick="toggleMenue()" class="language-btn" data-lang="en" onClick="changeLanguage()"  data-key="en-btn">English</button>
+            </div>
         </ul>
-        <div id="language-buttons">
-            <button class="language-btn" data-lang="fa" onClick="changeLanguage()" data-key="fa-btn">فارسی</button>
-            <button class="language-btn" data-lang="ps" onClick="changeLanguage()" data-key="ps-btn">پښتو</button>
-            <button class="language-btn" data-lang="en" onClick="changeLanguage()"  data-key="en-btn">English</button>
-        </div>
+
     </div>
     <section id="start">
         <img src="content/image3.jpg" alt="Background Image" class="background-image">

@@ -7,7 +7,6 @@
 }
 
 body {
-  color: white;
   font-family: "DM Serif Text", serif;
   font-weight: 400;
   font-style: regular;
@@ -161,21 +160,23 @@ body {
   display: none;
   transition: all 0.3s ease;
   z-index: 1000;
-  cursor: pointer;
   animation: slideIn 0.8s ease-in-out;
   pointer-events: none;
 }
 
 #menu-options ul {
+  height: 80%;
   list-style-type: none;
-  padding: 10px;
+  overflow-y: auto;
 }
 
 #menu-options ul li {
   padding: 10px;
   border-bottom: 1px solid #ccc;
-  transition: background-color 0.3s ease;
+  transition: 0.5s ease-in-out;
   text-decoration: none;
+  cursor: pointer;
+  height: 10%;
 }
 
 #menu-options ul li:last-child {
@@ -183,20 +184,19 @@ body {
 }
 
 #menu-options ul li:hover {
-  background-color: #d3d3d3;
+  background-color: rgb(0,8,20);
 }
 
-#menu-options ul li:active {
-  background-color: grey;
-}
-
-#menu-options ul li a {
-  color: black;
+#menu-options ul li{
+  color: rgb(0,8,20);
   text-decoration: none;
   display: block;
   width: 100%;
-  height: 100%;
-  padding: 10px;
+  padding: 20px;
+}
+
+#menu-options ul li:hover {
+  color: white;
 }
 
 .hidden {
@@ -406,7 +406,7 @@ body.loaded #loading-screen {
   margin-top: 10%;
   width: 80px;
   height: 40px;
-  padding: 20px;
+  padding: 20px 20px;
   border-radius: 5px;
   border: 2px solid rgb(0, 8, 20);
   color: rgb(0, 8, 20);
@@ -496,9 +496,18 @@ body.loaded #loading-screen {
       display: block;
   }
 
+#language-title {
+  display: flex; 
+  width: 100%;
+  border-top: 1px solid rgb(0, 0, 0);
+  height: 8%;
+  justify-content: center;
+  align-items: center;
+}
 
 
 #language-buttons {
+  position: relative;
   display: flex;
   justify-content: space-around;
   border-top: 1px solid #000000;
@@ -508,7 +517,7 @@ body.loaded #loading-screen {
 }
 
 .language-btn {
-  color: black;
+  color: rgb(0,8,20);
   transition: color 0.5s ease-in-out, text-decoration 0.5s ease-in-out;
   text-decoration: none;
   cursor: pointer;
@@ -516,18 +525,19 @@ body.loaded #loading-screen {
   width: 100%;
   border: none;
   background: none;
-  border: 0.5px solid black;
+  border: 1px solid rgb(0,8,20);
   font-size: 1.25rem;
   font-family: "Amiri", serif;
   font-weight: 400;
   font-style: normal;
+  transition: 0.3s ease-in-out;
 }
 
 .language-btn:hover {
-  color: #333;
+  color: white;
   text-decoration: underline;
-  background-color: rgb(200, 200, 200);
-  transition: 0.3s ease-in-out;
+  background-color: rgb(0, 8, 20);
+
 }
 
 .language-btn:focus {
@@ -582,6 +592,7 @@ body.loaded #loading-screen {
   z-index: 2;
   animation: jumping 2s ease-in-out infinite;
   cursor: pointer;
+  color: white;
 }
 
 @keyframes jumping {

@@ -35,7 +35,7 @@ function toggleMenue() {
             if (window.scrollY === 0) {
                 setNavbarStyle(false);
             }
-        }, 100); 
+        }, 200); 
     }
 }
 
@@ -136,13 +136,11 @@ window.addEventListener("load", () => {
 document.querySelectorAll('.language-btn').forEach(button => {
     button.addEventListener('click', function() {
         const selectedLang = this.getAttribute('data-lang');
-        setTimeout(() => {
         changeLanguage(selectedLang);
-    }, 800);
     });
 });
 
-function changeLanguage(language, events = [hideMenu, loadScreen]) {
+function changeLanguage(language, events = [loadScreen]) {
 
     document.body.classList.remove("loaded");
     window.scrollTo(0, 0);
@@ -197,7 +195,8 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "form-button": "Form&nbsp🡵",
             "menu-class-info": "Class Info",
             "class-info-title": "Class Info",
-            "class-info-descripion": "Information about the classrooms"
+            "class-info-descripion": "Information about the classrooms",
+            "language-title": "User Interface Language"
         },
         fa: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
@@ -240,7 +239,8 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "form-button":  "فورم&nbsp;🡵",
             "menu-class-info": "معلومات صنف",
             "class-info-title": "معلومات صنف",
-            "class-info-description": "معلومات درباره صنف‌ها"
+            "class-info-description": "معلومات درباره صنف‌ها",
+            "language-title": "زبان رابط کاربر"
             
         },
         ps: {
@@ -284,10 +284,10 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "form-button": "فورم&nbsp;🡵",
             "menu-class-info": "ټولګی معلومات",
             "class-info-title":"ټولګی معلومات",
-            "class-info-description": "د ټولګیو په اړه معلومات"
+            "class-info-description": "د ټولګیو په اړه معلومات",
+            "language-title": "د کارن انٹرفیس ژبه"
         }
     };
-
     if (!languageData[language]) {
         console.error(`Language '${language}' not supported.`);
         return;
@@ -296,9 +296,9 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
     const selectedLanguageData = languageData[language];
     const rtlEligibleElements = document.querySelectorAll('[data-rtl]');
 
+    setTimeout(() => {
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
-        
         if (selectedLanguageData[key]) {
             element.innerHTML = selectedLanguageData[key];
             
@@ -307,6 +307,7 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
                   document.body.classList.add('lang-faps');
                   rtlElement.style.textAlign = 'right';
                 } else {
+                    document.body.classList.remove('lang-faps');
                   rtlElement.style.textAlign = 'left';
                 }
               });
@@ -314,7 +315,7 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
         } else {
             console.warn(`Key '${key}' not found for language '${language}'.`);
         }
-    });
+    });}, 1000);
 }
 
 const navbarHeight = document.querySelector("#navbar").offsetHeight;
