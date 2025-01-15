@@ -195,7 +195,7 @@ function changeLanguage(language, events = [loadScreen]) {
             "form-button": "Form&nbsp🡵",
             "menu-class-info": "Class Info",
             "class-info-title": "Class Info",
-            "class-info-descripion": "Information about the classrooms",
+            "class-info-description": "Information about the classrooms",
             "language-title": "User Interface Language"
         },
         fa: {
