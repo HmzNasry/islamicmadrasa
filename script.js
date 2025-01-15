@@ -196,7 +196,8 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "16": "Educating future leaders with wisdom and character",
             "17": "Cultivating curiosity and values for lifelong success",
             "18": "Transforming lives through learning and ethical principles",
-            "19": "Developing character and intellect for a brighter tomorrow"
+            "19": "Developing character and intellect for a brighter tomorrow",
+            "form-button": "Form&nbsp🡵"
         },
         fa: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
@@ -235,7 +236,8 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "16": "آموزش رهبران آینده با حکمت و شخصیت",
             "17": "پرورش کنجکاوی و ارزش‌ها برای موفقیت مادام‌العمر",
             "18": "تغییر زندگی از طریق یادگیری و اصول اخلاقی",
-            "19": "پرورش شخصیت و عقل برای فردایی روشن"
+            "19": "پرورش شخصیت و عقل برای فردایی روشن",
+            "form-button":  "فورم&nbsp;🡵"
         },
         ps: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
@@ -274,7 +276,8 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "16": "د حکمت او شخصیت سره د راتلونکي مشرانو روزنه",
             "17": "د اوږدمهاله بریالیتوب لپاره د تجسس او ارزښتونو روزنه",
             "18": "د زده‌کړې او اخلاقي اصولو له لارې ژوند بدلول",
-            "19": "د روښانه سبا لپاره شخصیت او عقل وده ورکول"
+            "19": "د روښانه سبا لپاره شخصیت او عقل وده ورکول",
+            "form-button": "فورم&nbsp;🡵"
         }
     };
 
