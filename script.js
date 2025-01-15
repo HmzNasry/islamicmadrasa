@@ -140,7 +140,7 @@ document.querySelectorAll('.language-btn').forEach(button => {
     });
 });
 
-function changeLanguage(language, events = [loadScreen]) {
+function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
 
     document.body.classList.remove("loaded");
     window.scrollTo(0, 0);
@@ -327,6 +327,7 @@ function scrollForAbout() {
         top: aboutOffsetTop,
         behavior: "smooth"
     });
+    toggleMenue()
 }
 
 function scrollForContact() {
@@ -336,6 +337,7 @@ function scrollForContact() {
         top: contactOffsetTop,
         behavior: "smooth"
     });
+    toggleMenue()
 }
 
 function scrollForRegister() {
@@ -345,6 +347,7 @@ function scrollForRegister() {
         top: registerOffsetTop,
         behavior: "smooth"
     });
+    toggleMenue()
 }
 
 function scrollForClassInfo() {
@@ -354,6 +357,7 @@ function scrollForClassInfo() {
         top: classInfoOffsetTop,
         behavior: "smooth"
     })
+    toggleMenue()
 }
 
 
