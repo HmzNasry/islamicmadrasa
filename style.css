@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-hr {
-  background-color: white;
-}
-
 body {
   color: white;
   font-family: "DM Serif Text", serif;
@@ -208,8 +204,12 @@ body {
 }
 
 section {
+  position: relative;
   padding: 60px 20px;
   min-height: 100vh;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  z-index: 2;
 }
 
 
@@ -241,7 +241,6 @@ section {
   overflow-y: auto;
   word-wrap: break-word;
   height: auto;
-  z-index: 2;
 }
 
 #about-box p {
@@ -370,11 +369,6 @@ body.loaded #loading-screen {
   pointer-events: none; 
 }
 
-
-section {
-  z-index: 2;
-}
-
 #register {
   display: flex;
   justify-content: center;
@@ -399,7 +393,6 @@ section {
   overflow-y: auto;
   word-wrap: break-word;
   height: auto;
-  z-index: 2;
 }
 
 
@@ -456,7 +449,6 @@ section {
   overflow-y: auto;
   word-wrap: break-word;
   height: auto;
-  z-index: 2;
 }
 
 #class-info {
@@ -466,6 +458,24 @@ section {
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(to top, rgb(0, 0, 0), rgb(0, 8, 20));
+}
+
+#class-info-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 10px 10px 10px rgb(0, 0, 0);
+  color: black;
+  width: 40vh;
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: normal;
+  overflow-y: auto;
+  word-wrap: break-word;
+  height: auto;
 }
 
 
@@ -583,11 +593,8 @@ section {
   }
 }
 
-.rtl {
+.lang-faps {
   text-align: right;
-}
-
-.lang-mefaps {
   font-family: "Amiri", serif;
   font-weight: 400;
   font-style: normal;

@@ -32,6 +32,7 @@
             <li><a data-key="menu-about" data-rtl="true" onClick="scrollForAbout()">About</a></li>
             <li><a data-key="menu-register" data-rtl="true" onClick="scrollForRegister()">Register</a></li>
             <li><a data-key="menu-contact" onClick="scrollForContact()" data-rtl="true">Contact</a></li>
+            <li><a data-key="menu-class-info" onClick="scrollForClassInfo()" data-rtl="true">Class Info</a></li>
         </ul>
         <div id="language-buttons">
             <button class="language-btn" data-lang="fa" onClick="changeLanguage()" data-key="fa-btn">فارسی</button>
@@ -46,7 +47,7 @@
             <br>
             <p id="quality-text"></p>
         </div>
-        <span onClick="scrollDown()" id="arrow" data-key="scroll-down">&darr;</span>
+        <span id="arrow" onClick="scrollForAbout()">&darr;</span>
     </section>
     <section id="about">
        
@@ -60,8 +61,7 @@
             <a href="#curricilum" data-key="learn-more"><br>Learn More &rarr;</a> 
         </div>
     </section>
-    <hr>
-    <hr>
+
     <section id="register">
         <div id="register-box">
             <h1 data-key="register-title" data-rtl="true">Register</h1>
@@ -71,15 +71,19 @@
             </a>
         </div>
     </section>
-    <hr>
+
     <section id="contact">
         <div id="contact-box">
             <h1 data-key="contact-title" data-rtl="true">Contact Us</h1>
             <p data-key="contact-description" data-rtl="true">Contact information and form.</p>
         </div>
     </section>
-<hr>
+
     <section id="class-info">
+        <div id="class-info-box">
+            <h1 data-key="class-info-title" data-rtl="true">Class Info</h1>
+            <p data-key="class-info-description" data-rtl="true">Information about the classrooms</p>
+        </div>
     </section>
     <script src="script.js">
     </script>

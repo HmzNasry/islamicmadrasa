@@ -1,6 +1,4 @@
 
-document.getElementById('arrow').addEventListener('click', function() { this.style.animation = 'none'; });
-
 function setNavbarStyle(isScrolled) {
     const navbar = document.getElementById("navbar");
     const logoLink = document.getElementById('logo').querySelector('a');
@@ -76,9 +74,8 @@ links.forEach(link => {
 });
 
 function scrollDown() {
-    const arrow = document.getElementById("arrow");
     window.scroll({
-        top: window.innerHeight,
+        top: window.innerHeight * x,
         behavior: 'smooth'
     });
 }
@@ -197,7 +194,10 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "17": "Cultivating curiosity and values for lifelong success",
             "18": "Transforming lives through learning and ethical principles",
             "19": "Developing character and intellect for a brighter tomorrow",
-            "form-button": "Form&nbsp🡵"
+            "form-button": "Form&nbsp🡵",
+            "menu-class-info": "Class Info",
+            "class-info-title": "Class Info",
+            "class-info-descripion": "Information about the classrooms"
         },
         fa: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
@@ -237,7 +237,11 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "17": "پرورش کنجکاوی و ارزش‌ها برای موفقیت مادام‌العمر",
             "18": "تغییر زندگی از طریق یادگیری و اصول اخلاقی",
             "19": "پرورش شخصیت و عقل برای فردایی روشن",
-            "form-button":  "فورم&nbsp;🡵"
+            "form-button":  "فورم&nbsp;🡵",
+            "menu-class-info": "معلومات صنف",
+            "class-info-title": "معلومات صنف",
+            "class-info-description": "معلومات درباره صنف‌ها"
+            
         },
         ps: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
@@ -277,7 +281,10 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             "17": "د اوږدمهاله بریالیتوب لپاره د تجسس او ارزښتونو روزنه",
             "18": "د زده‌کړې او اخلاقي اصولو له لارې ژوند بدلول",
             "19": "د روښانه سبا لپاره شخصیت او عقل وده ورکول",
-            "form-button": "فورم&nbsp;🡵"
+            "form-button": "فورم&nbsp;🡵",
+            "menu-class-info": "ټولګی معلومات",
+            "class-info-title":"ټولګی معلومات",
+            "class-info-description": "د ټولګیو په اړه معلومات"
         }
     };
 
@@ -297,7 +304,7 @@ function changeLanguage(language, events = [hideMenu, loadScreen]) {
             
             rtlEligibleElements.forEach(rtlElement => {
                 if (language === 'fa' || language === 'ps') {
-                  document.body.classList.add('lang-mefaps');
+                  document.body.classList.add('lang-faps');
                   rtlElement.style.textAlign = 'right';
                 } else {
                   rtlElement.style.textAlign = 'left';
@@ -337,6 +344,15 @@ function scrollForRegister() {
         top: registerOffsetTop,
         behavior: "smooth"
     });
+}
+
+function scrollForClassInfo() {
+    const classInfoSection = document.getElementById("class-info");
+    const classInfoOffsetTop = classInfoSection.offsetTop - navbarHeight;
+    window.scrollTo({
+        top: classInfoOffsetTop,
+        behavior: "smooth"
+    })
 }
 
 
