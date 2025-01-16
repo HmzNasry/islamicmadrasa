@@ -116,6 +116,9 @@ body {
 #logo a {
   text-decoration: none;
   color: rgb(255, 255, 255);
+  font-family: Amiri, sans-serif;
+  font-weight: 400;
+  font-style: regular;
 }
 
 #hamburger-menu {
@@ -174,7 +177,7 @@ body {
   text-decoration: none;
   cursor: pointer;
   height: 10%;
-  font-size: 1.2rem;
+  font-size: 1.7em;
 }
 
 #menu-options ul li a {
@@ -215,7 +218,13 @@ section {
   z-index: 2;
 }
 
+section p {
+  font-size: 1.5em;
+}
 
+section h1{
+  font-size: 2em;
+}
 
 #about {
   background: transparent;
@@ -245,10 +254,15 @@ section {
   height: auto;
 }
 
+#about-box p {
+  font-size: 1.5em;
+}
+
 #about-box a {
   text-decoration: underline;
   color: rgb(145, 123, 0);
   text-align: right;
+  font-size: 1.5em;
 }
 
 #about-us-title {
@@ -400,9 +414,9 @@ body.loaded #loading-screen {
   position: relative;
   margin: auto;
   margin-top: 10%;
-  width: 80px;
-  height: 40px;
-  padding: 20px 20px;
+  width: 40%;
+  height: 2.5%;
+  padding: 10px;
   border-radius: 5px;
   border: 2px solid rgb(0, 8, 20);
   color: rgb(0, 8, 20);
@@ -411,7 +425,7 @@ body.loaded #loading-screen {
   text-align: center;
   transition: 0.5s ease-in-out;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.5em;
 }
 
 #form-button:hover {
@@ -520,7 +534,7 @@ body.loaded #loading-screen {
   border: none;
   background: none;
   border: 1px solid rgb(0,8,20);
-  font-size: 1.25rem;
+  font-size: 1.7rem;
   transition: 0.3s ease-in-out;
 }
 
@@ -591,6 +605,18 @@ body.loaded #loading-screen {
   50% {
       transform: translateY(-20px); 
   }
+}
+
+.fapsbtn {
+  font-family: "Amiri", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.eng {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: regular;
 }
 
 .lang-faps {
