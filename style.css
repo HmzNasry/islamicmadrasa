@@ -114,9 +114,6 @@ body {
 }
 
 #logo a {
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
@@ -240,19 +237,12 @@ section {
   color: black;
   width: 40vh;
   text-align: left;
-  font-family: 'Arial', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: normal;
   overflow-y: auto;
   word-wrap: break-word;
   height: auto;
-}
-
-#about-box p {
-  font-family: "DM Serif Text", serif;
-  font-weight: 200;
-  font-style: regular;
 }
 
 #about-box a {
@@ -266,6 +256,8 @@ section {
   color: rgb(0, 0, 0);
 
 }
+
+
 
 #about img {
   position: absolute;
@@ -282,7 +274,6 @@ section {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  font-family: Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: normal;
@@ -392,7 +383,6 @@ body.loaded #loading-screen {
   box-shadow: 10px 10px 10px rgb(0, 0, 0);
   color: black;
   width: 40vh;
-  font-family: 'Arial', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: normal;
@@ -448,7 +438,6 @@ body.loaded #loading-screen {
   box-shadow: 10px 10px 10px rgb(0, 0, 0);
   color: black;
   width: 40vh;
-  font-family: 'Arial', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: normal;
@@ -475,7 +464,6 @@ body.loaded #loading-screen {
   box-shadow: 10px 10px 10px rgb(0, 0, 0);
   color: black;
   width: 40vh;
-  font-family: 'Arial', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: normal;
@@ -533,9 +521,6 @@ body.loaded #loading-screen {
   background: none;
   border: 1px solid rgb(0,8,20);
   font-size: 1.25rem;
-  font-family: "Amiri", serif;
-  font-weight: 400;
-  font-style: normal;
   transition: 0.3s ease-in-out;
 }
 
@@ -563,6 +548,7 @@ body.loaded #loading-screen {
   text-align: center;
 }
 
+
 @keyframes slideIn {
   from {
       transform: translateY(-100%);
@@ -586,9 +572,6 @@ body.loaded #loading-screen {
 }
 
 
-#quality-text {
-  overflow-wrap: break-word;
-}
 
 #arrow {
   position: absolute;

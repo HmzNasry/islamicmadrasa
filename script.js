@@ -169,7 +169,7 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "about-description": "At Islamic Madrasa, we are dedicated to fostering a nurturing and inclusive environment where Afghan children can thrive academically.",
             "learn-more": "Learn More &rarr;",
             "register-title": "Register",
-            "register-description": "Registration form and details.",
+            "register-description": "Please use the button below to access the registration form<br>Students are divided into 3 clalsses:<br>Grade 1 / Grade 2 / Grade 3<br>based on their age and knowledge",
             "contact-title": "Contact Us",
             "contact-description": "Contact information and form.",
             "0": "Inspiring growth through knowledge and integrity",
@@ -213,7 +213,7 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "about-description": "ر مدرسه اسلامی، ما متعهد به پرورش یک محیط پرورش دهنده و فراگیر هستیم جاییکه اطفال افغان بتوانند از نظر علمی، معنوی و فرهنگی رونق یابند ",
             "learn-more": "یادگیری بیشتر &rarr;",
             "register-title": "ثبت نام",
-            "register-description": "فرم ثبت نام و جزئیات",
+            "register-description": "لطفا از دکمه زیر برای دسترسی به فرم ثبت نام استفاده کنید<br>دانش آموزان بر اساس سن و دانش خود به 3 کلاس تقسیم می شوند:<br> پایه 1 / پایه 2 / پایه 3 <br>بر اساس سن و دانش خود",
             "contact-title": "تماس با ما",
             "contact-description": "اطلاعات تماس و فرم",
             "0": "الهام‌بخشی رشد از طریق دانش و صداقت",
@@ -240,7 +240,7 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "menu-class-info": "معلومات صنف",
             "class-info-title": "معلومات صنف",
             "class-info-description": "معلومات درباره صنف‌ها",
-            "language-title": "زبان رابط کاربر"
+            "language-title": "زبان وبسایت"
             
         },
         ps: {
@@ -258,7 +258,7 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "about-description": "په اسلامي مدرسو کې، موږ د روزنې او ټول شموله چاپیریال رامینځته کولو ته وقف شوي یو چیرې چې افغان ماشومان په علمي، روحاني او کلتوري توګه وده کولی شي",
             "learn-more": "نور زده کړئ &rarr;",
             "register-title": "د راجسټری",
-            "register-description": "د ثبت نام فورمه او تفصیل",
+            "register-description": "مهرباني وکړئ د نوم لیکنې فورمې ته د لاسرسي لپاره لاندې تڼۍ وکاروئ<br>زده کونکي په 3 ټولګیو ویشل شوي دي:<br> د دوی د عمر او پوهې پراساس 1 ټولګي / 2 ټولګي / دریم ټولګي <br>",
             "contact-title": "موږ سره اړیکه",
             "contact-description": "د اړیکو معلومات او فورمه",
             "0": "د پوهې او صداقت له لارې وده هڅول",
@@ -285,7 +285,7 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "menu-class-info": "ټولګی معلومات",
             "class-info-title":"ټولګی معلومات",
             "class-info-description": "د ټولګیو په اړه معلومات",
-            "language-title": "د کارن انٹرفیس ژبه"
+            "language-title": "د وېبپاڼې ژبه"
         }
     };
     if (!languageData[language]) {
@@ -306,6 +306,7 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
                 if (language === 'fa' || language === 'ps') {
                   document.body.classList.add('lang-faps');
                   rtlElement.style.textAlign = 'right';
+                  document.body.style.fontFamily = 'Amiri'
                 } else {
                     document.body.classList.remove('lang-faps');
                   rtlElement.style.textAlign = 'left';
