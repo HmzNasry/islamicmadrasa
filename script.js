@@ -75,7 +75,7 @@ links.forEach(link => {
 
 function scrollDown() {
     window.scroll({
-        top: window.innerHeight * x,
+        top: window.innerHeight,
         behavior: 'smooth'
     });
 }
