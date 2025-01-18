@@ -304,12 +304,14 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             
             rtlEligibleElements.forEach(rtlElement => {
                 if (language === 'fa' || language === 'ps') {
-                  document.body.classList.add('lang-faps');
-                  rtlElement.style.textAlign = 'right';
-                  document.body.style.fontFamily = 'Amiri'
+                    document.body.classList.add('lang-faps');
+                    rtlElement.style.textAlign = 'right';
+                    document.body.style.fontFamily = 'Amiri';
                 } else {
                     document.body.classList.remove('lang-faps');
-                  rtlElement.style.textAlign = 'left';
+                    rtlElement.style.textAlign = 'left';
+                    document.body.classList.remove('lang-fps');
+                    document.body.style.fontFamily = 'DM Serif Text';
                 }
               });
             

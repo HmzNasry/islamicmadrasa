@@ -646,6 +646,10 @@ height: 100%;
 width: 15%;
 }
 
+footer span {
+  width: 50%;
+}
+
 #somt {
-  font-size: 1.5em;
+  font-size: 1.1em;
 }
