@@ -11,6 +11,7 @@ body {
   font-weight: 400;
   font-style: regular;
   background-color: black;
+  overflow-x: hidden;
 }
 
 #navbar {
@@ -215,6 +216,7 @@ section {
   min-height: 100vh;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
+  width: 100vw;
   z-index: 2;
 }
 
@@ -234,7 +236,7 @@ section h1{
   min-height: 100vh;
   z-index: 2;
   border-top: 2px solid white;
-  background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 8, 20));
+  background: black;
 }
 
 #about-box {
@@ -385,7 +387,7 @@ body.loaded #loading-screen {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to top, rgb(0, 0, 0), rgb(0, 8, 20));
+  background: black;
 }
 
 #register-box {
@@ -440,7 +442,7 @@ body.loaded #loading-screen {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 8, 20));
+  background: black;
 }
 
 #contact-box {
@@ -466,7 +468,7 @@ body.loaded #loading-screen {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to top, rgb(0, 0, 0), rgb(0, 8, 20));
+  background: black;
 }
 
 #class-info-box {
@@ -627,29 +629,35 @@ body.loaded #loading-screen {
 }
 
 footer {
-  align-items: center;
-  width: 100%;
   position: absolute;
+  background-color: white;
+  width: 100vw;
+  z-index: 3;
+  height: auto;
   display: flex;
-  justify-content: center;
-  padding: 5% 5%;
-  background: white;
-  opacity: 1;
-  z-index: 2;
+  overflow-y: auto;
 }
 
-footer img {
-  display: inline-block;
-  position: absolute;
-  left: 0;
-height: 100%;
-width: 18%;
+footer div {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3);
+  height: 100%;
+  padding: 20px;
 }
 
-footer span {
-  width: 50%;
+footer div h1 {
+  text-align: center;
+  font-size: 1.5em;
 }
 
-#somt {
-  font-size: 1.1em;
+ footer div span {
+  font-size: 0.6em;
 }
+
+hr {
+  border: none; 
+  height: 2px; 
+  background: linear-gradient(to right, white, black, white);
+}
+
