@@ -145,6 +145,7 @@ body {
 }
 
 #hamburger-menu.active .line:nth-child(2) {
+
   opacity: 0;
 }
 
@@ -152,62 +153,50 @@ body {
   transform: rotate(-45deg) translate(6px, -5px);
 }
 
-#menu-options {
+.menu-options.active {
+  border-left: 25px solid rgb(0, 0, 0);
+  background-color: rgb(235, 235, 235);
+  transition: ease-in-out;
+}
+
+#menu {
   margin-top: 2vh;
   position: fixed;
   right: 0;
   background-color: white;
   width: 30vh;
-  display: none;
   transition: all 0.3s ease;
   z-index: 1000;
-  animation: slideIn 0.8s ease-in-out;
   pointer-events: none;
 }
 
-#menu-options ul {
+#menu ul {
   height: 80%;
   list-style-type: none;
   overflow-y: auto;
 }
 
-#menu-options ul li {
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
-  transition: 0.5s ease-in-out;
+.menu-options {
+  border-bottom: 1px solid #000000;
+  transition: 0.2s ease-in-out;
   text-decoration: none;
   cursor: pointer;
   height: 10%;
   font-size: 1.7em;
 }
 
-#menu-options ul li a {
-  width: 100%;
-  height: 100%;
+.menu-options:hover {
+  background-color: rgb(206, 206, 206);
+  transition: 0.5s ease-in-out;
+  border-left: 25px solid rgb(0, 0, 0);
 }
 
-#menu-options ul li:last-child {
-  border-bottom: none;
-}
-
-#menu-options ul li:hover {
-  background-color: rgb(0,8,20);
-}
-
-#menu-options ul li{
-  color: rgb(0,8,20);
+.menu-options{
+  color: black;
   text-decoration: none;
   display: block;
   width: 100%;
-  padding: 20px;
-}
-
-#menu-options ul li:hover {
-  color: white;
-}
-
-.hidden {
-  display: none;
+  padding: 20px 30px;
 }
 
 section {
@@ -490,7 +479,7 @@ body.loaded #loading-screen {
 
 
 
-#menu-options {
+#menu {
   top: 0;
   right: 0;
   width: 100vw;
@@ -500,30 +489,34 @@ body.loaded #loading-screen {
   opacity: 0;
 }
 
-  #menu-options.active {
-      pointer-events: auto;
-      opacity: 1;
-      display: block;
-  }
+#menu.active {
+    opacity: 1;
+    pointer-events: auto;
+    display: block;
+    animation: fadeIn 0.5s ease-in-out
+}
 
 #language-title {
   display: flex; 
   width: 100%;
-  border-top: 1px solid rgb(0, 0, 0);
   height: 8%;
   justify-content: center;
   align-items: center;
+  font-size: 1.5em;
+  background: black;
+  color: white;
 }
 
 
 #language-buttons {
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   border-top: 1px solid #000000;
   border-bottom: 1px solid black;
-  height: 5vh;
+  height: 20vh;
   border: none;
+  flex-direction: column;
 }
 
 .language-btn {
@@ -532,12 +525,15 @@ body.loaded #loading-screen {
   text-decoration: none;
   cursor: pointer;
   height: 100%;
-  width: 100%;
   border: none;
   background: none;
   border: 1px solid rgb(0,8,20);
   font-size: 1.7rem;
   transition: 0.3s ease-in-out;
+}
+
+.language-btn.active {
+  background-color: rgb(206, 206, 206);
 }
 
 .language-btn:hover {
@@ -565,24 +561,20 @@ body.loaded #loading-screen {
 }
 
 
-@keyframes slideIn {
+@keyframes fadeIn {
   from {
-      transform: translateY(-100%);
       opacity: 0;
   }
   to {
-      transform: translateY(0);
       opacity: 1;
   }
 }
 
-@keyframes slideOut {
+@keyframes fadeOut {
   from {
-      transform: translateY(0);
       opacity: 1;
   }
   to {
-      transform: translateY(-100%);
       opacity: 0;
   }
 }

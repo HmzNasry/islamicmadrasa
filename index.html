@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="content/favicon.png">
+    <link rel="icon" type="image/png" href="content/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="https://use.typekit.net/fox6lzw.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islamic Madrasa</title>
+    <title>Islamic Madrasa (BETA)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body >
@@ -28,12 +28,12 @@
         </div>
     </ul>
 
-    <div id="menu-options" class="hidden">
+    <div id="menu" class="hidden">
         <ul>
-            <li onClick="scrollForAbout()"><a data-key="menu-about" data-rtl="true">About</a></li>
-            <li onClick="scrollForRegister()"><a data-key="menu-register" data-rtl="true">Register</a></li>
-            <li onClick="scrollForContact()"><a data-key="menu-contact" data-rtl="true">Contact</a></li>
-            <li onClick="scrollForClassInfo()"><a data-key="menu-class-info" data-rtl="true">Class Info</a></li>
+            <li class="menu-options" onClick="scrollForAbout()"><a data-key="menu-about" data-rtl="true">About</a></li>
+            <li class="menu-options" onClick="scrollForRegister()"><a data-key="menu-register" data-rtl="true">Register</a></li>
+            <li class="menu-options" onClick="scrollForContact()"><a data-key="menu-contact" data-rtl="true">Contact</a></li>
+            <li class="menu-options" onClick="scrollForClassInfo()"><a data-key="menu-class-info" data-rtl="true">Class Info</a></li>
             <div id="language-title" data-key="language-title"><span>User Interface Language</span></div>
             <div id="language-buttons">
                 <button class="fapsbtn language-btn" data-lang="fa" data-key="fa-btn">فارسی</button>
@@ -95,7 +95,7 @@
 <footer id="footer">
 
     <div id="hours-container">
-    <h1 id="hours">Operating Hours<br><h1>
+    <h1 id="hours">Time<br><h1>
     <hr>
     <span id="times">Mondays, Wednesdays, Fridays<br>6:00pm - 8:00pm</span>
     </div>

@@ -18,7 +18,7 @@ function setNavbarStyle(isScrolled) {
 }
 
 function toggleMenue() {
-    const menu = document.getElementById('menu-options');
+    const menu = document.getElementById('menu');
     const hamburger = document.getElementById('hamburger-menu');
     const navbar = document.getElementById("navbar");
     if (menu.classList.contains('hidden')) {
@@ -51,27 +51,31 @@ window.addEventListener('scroll', () => {
 });
 
 
-function hideMenu() {
-    const links = document.querySelectorAll('#menu-options a');
-    
-    links.forEach(link => {
-            const menu = document.getElementById('menu-options');
-            menu.classList.add('hidden');
-            menu.classList.remove('active');
-            
-            const hamburger = document.getElementById('hamburger-menu');
-            hamburger.classList.remove('active');
-            
-            if (window.scrollY === 0) {
-                setNavbarStyle(false);
-            }
-    });
-}
 
-const links = document.querySelectorAll('#menu-options a');
-links.forEach(link => {
-    addEventListener('click', hideMenu());
+const links = document.getElementsByClassName('menu-options');
+const langButtons = document.getElementsByClassName('language-btn');
+
+Array.from(links).forEach(link => {
+    link.addEventListener('click', () => {
+        Array.from(links).forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        
+        toggleMenue();
+        console.log('Menu item clicked');
+    });
 });
+
+Array.from(langButtons).forEach(btn => {
+    btn.addEventListener('click', () => {
+        Array.from(langButtons).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+
+
+if (window.scrollY === 0) {
+    setNavbarStyle(false);
+}
 
 function scrollDown() {
     window.scroll({
