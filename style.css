@@ -422,7 +422,7 @@ body.loaded #loading-screen {
   transition: 0.5s ease-in-out;
   text-decoration: none;
   font-size: 1.5em;
-  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  background: black;
 }
 
 #contact  {
