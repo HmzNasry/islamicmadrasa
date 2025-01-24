@@ -14,7 +14,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Popup container */
 
 .popup {
   padding: 20px;
@@ -30,7 +29,7 @@ body {
   z-index: 1000;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
   backdrop-filter: blur(20px);
   overflow: hidden;
 }
@@ -56,7 +55,6 @@ body {
   font-size: 1.5em;
 }
 
-/* New Keyframe Animation */
 @keyframes smoothMotion {
   0% {
     transform: translate(0, 0) scale(1) rotate(0deg);
@@ -83,7 +81,7 @@ body {
   text-align: center;
   font-size: 1.5em;
   width: 50%;
-  z-index: 1; /* Ensures content stays above ::before */
+  z-index: 1; 
 }
 
 
@@ -257,6 +255,14 @@ body {
   0 0 40px rgba(255, 255, 255, 0.4);  
 }
 
+#menu svg {
+  top: 10%;
+  position: relative;
+  width: 10%;
+  height: 50%;
+  margin-right: 20px;
+}
+
 
 #menu {
   padding: 25px;
@@ -278,14 +284,16 @@ body {
 
 
 .menu-options {
+  display: flex;
+  align-items: center;
   color: black;
   text-decoration: none;
   display: block;
   width: 100%;
   padding: 20px;
-  transition: border-left 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   cursor: pointer;
-  height: 10%;
+  height: 12.5%;
   font-size: 1.7em;
 }
 
@@ -302,8 +310,6 @@ section {
   position: relative;
   padding: 60px 20px;
   min-height: 100vh;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
   width: 100vw;
   z-index: 2;
 }
@@ -323,7 +329,6 @@ section h1{
   align-items: center;
   min-height: 100vh;
   z-index: 2;
-  border-top: 2px solid white;
   background: black;
 }
 
@@ -395,19 +400,19 @@ section h1{
   z-index: 10000;
   opacity: 1;
   transition: opacity 1s ease-in-out;
-  background: rgba(0, 0, 0, 0.9); 
-  backdrop-filter: blur(30px); 
-  -webkit-backdrop-filter: blur(30px); 
+  background: rgba(0, 0, 0, 0.8); 
+  backdrop-filter: blur(50px); 
+  -webkit-backdrop-filter: blur(50px); 
   will-change: backdrop-filter;
 }
 
-svg {
+#loading-screen svg {
   width: 3.25em;
   transform-origin: center;
   animation: rotate4 2s linear infinite;
 }
 
-circle {
+#loading-screen circle {
   fill: none;
   stroke: white;
   stroke-width: 2;
@@ -582,8 +587,8 @@ body.loaded #loading-screen {
   display: none;
   opacity: 0;
   background: rgba(0, 0, 0, 0.8); 
-  backdrop-filter: blur(30px); 
-  -webkit-backdrop-filter: blur(10px); 
+  backdrop-filter: blur(40px); 
+  -webkit-backdrop-filter: blur(40px); 
   display: flex;
   will-change: backdrop-filter;
 }
@@ -610,6 +615,8 @@ body.loaded #loading-screen {
   border: none;
   width: 97vw;
   flex-direction: column;
+  transition: 0.5s ease-in-out;
+
 }
 
 .language-btn {

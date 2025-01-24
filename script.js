@@ -295,32 +295,46 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
         console.error(`Language '${language}' not supported.`);
         return;
     }
+    
     const elements = document.querySelectorAll('[data-key]');
     const selectedLanguageData = languageData[language];
     const rtlEligibleElements = document.querySelectorAll('[data-rtl]');
-    const menuOptions = document.getElementsByClassName('menu-options');
-
+    const menuOptions = document.querySelectorAll('.menu-options');
+    
+    if (language === 'fa' || language === 'ps') {
+        document.body.classList.remove('lang-ltr');
+        document.body.classList.add('lang-rtl');
+    } else {
+        document.body.classList.remove('lang-rtl');
+        document.body.classList.add('lang-ltr');
+    }
+    
     setTimeout(() => {
-    elements.forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (selectedLanguageData[key]) {
-            element.innerHTML = selectedLanguageData[key];
-
-            rtlEligibleElements.forEach(rtlElement => {
+        elements.forEach((element) => {
+            const key = element.getAttribute('data-key');
+            if (selectedLanguageData[key]) {
+                element.innerHTML = selectedLanguageData[key];
+            } else {
+                console.warn(`Key '${key}' not found for language '${language}'.`);
+            }
+        });
+    
+        menuOptions.forEach((option) => {
+            const svg = option.querySelector('svg');
+            const span = option.querySelector('span');
+            if (svg && span) {
                 if (language === 'fa' || language === 'ps') {
-                    document.body.classList.remove('lang-ltr')
-                    document.body.classList.add('lang-rtl');
+                    svg.style.marginRight = ('0px');
+                    option.appendChild(svg); 
+                    svg.style.marginLeft = ('20px');
                 } else {
-                    document.body.classList.remove('lang-rtl')
-                    document.body.classList.add('lang-ltr');
- 
+                    svg.style.marginLeft = ('0px')
+                    option.insertBefore(svg, span); 
+                    svg.style.marginRight = ('20px');
                 }
-            });
-            
-        } else {
-            console.warn(`Key '${key}' not found for language '${language}'.`);
-        }
-    });}, 1000);
+            }
+        });
+    }, 1000);
 }
 
 const navbarHeight = document.querySelector("#navbar").offsetHeight;
