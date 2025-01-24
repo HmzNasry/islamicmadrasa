@@ -200,7 +200,6 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "menu-class-info": "Class Info",
             "class-info-title": "Class Info",
             "class-info-description": "Information about the classrooms",
-            "language-title": "User Interface Language"
         },
         fa: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
@@ -244,7 +243,6 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "menu-class-info": "معلومات صنف",
             "class-info-title": "معلومات صنف",
             "class-info-description": "معلومات درباره صنف‌ها",
-            "language-title": "زبان وبسایت"
             
         },
         ps: {
@@ -289,7 +287,6 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "menu-class-info": "ټولګی معلومات",
             "class-info-title":"ټولګی معلومات",
             "class-info-description": "د ټولګیو په اړه معلومات",
-            "language-title": "د وېبپاڼې ژبه"
         }
     };
     if (!languageData[language]) {
@@ -299,25 +296,24 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
     const elements = document.querySelectorAll('[data-key]');
     const selectedLanguageData = languageData[language];
     const rtlEligibleElements = document.querySelectorAll('[data-rtl]');
+    const menuOptions = document.getElementsByClassName('menu-options');
 
     setTimeout(() => {
     elements.forEach(element => {
         const key = element.getAttribute('data-key');
         if (selectedLanguageData[key]) {
             element.innerHTML = selectedLanguageData[key];
-            
+
             rtlEligibleElements.forEach(rtlElement => {
                 if (language === 'fa' || language === 'ps') {
-                    document.body.classList.add('lang-faps');
-                    rtlElement.style.textAlign = 'right';
-                    document.body.style.fontFamily = 'Amiri';
+                    document.body.classList.remove('lang-ltr')
+                    document.body.classList.add('lang-rtl');
                 } else {
-                    document.body.classList.remove('lang-faps');
-                    rtlElement.style.textAlign = 'left';
-                    document.body.classList.remove('lang-fps');
-                    document.body.style.fontFamily = 'DM Serif Text';
+                    document.body.classList.remove('lang-rtl')
+                    document.body.classList.add('lang-ltr');
+ 
                 }
-              });
+            });
             
         } else {
             console.warn(`Key '${key}' not found for language '${language}'.`);
