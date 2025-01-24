@@ -1,9 +1,24 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const time = document.getElementById('time');
+
+    const updateTime = () => {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const formattedTime = `${hours}:${minutes}`;
+        time.textContent = formattedTime;
+    };
+
+    updateTime();
+    setInterval(updateTime, 60000);
+});
+
+
 
 function setNavbarStyle(isScrolled) {
     const navbar = document.getElementById("navbar");
     const logoLink = document.getElementById('logo').querySelector('a');
     const lines = document.getElementsByClassName("line");
-
     if (isScrolled) {
         navbar.classList.add('scrolled');
         logoLink.classList.add('scrolled-text');
@@ -35,7 +50,7 @@ function toggleMenue() {
             if (window.scrollY === 0) {
                 setNavbarStyle(false);
             }
-        }, 200); 
+        }, 0); 
     }
 }
 
