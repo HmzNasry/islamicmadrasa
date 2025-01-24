@@ -365,36 +365,47 @@ function scrollForClassInfo() {
     toggleMenue()
 }
 
+function setCookie(name, value, ttl) {
+    const now = new Date();
+    now.setTime(now.getTime() + ttl);
+    document.cookie = `${name}=${value}; expires=${now.toUTCString()}; path=/`;
+}
+
+function getCookie(name) {
+    const cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        const [key, value] = cookie.split("=");
+        if (key === name) return value;
+    }
+    return null;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-    const correctPassword = "devpasskey123"; 
+    const correctPassword = "devpasskey123";
     const popup = document.getElementById("betaPopup");
     const closeBtn = document.getElementById("closePopup");
     const body = document.body;
-  
-    setTimeout(() => {
-      let attempts = 1; 
-      while (attempts > 0) {
-        let pw = prompt("Enter Access Key:");
-        if (pw === correctPassword) {
-          return;
-        } else {
-          attempts--;
-          if (attempts > 0) {
-            alert(`Incorrect password. You have ${attempts} attempt(s) remaining.`);
-          }
-        }
-      }
-  
- 
-      popup.classList.remove("hidden");
-      popup.classList.add("visible");
-      body.classList.add("no-scroll");
-    }, 1000);
-  
+
+    if (!getCookie("authorizedSession")) {
+        setTimeout(() => {
+            let attempts = 1;
+            while (attempts > 0) {
+                const pw = prompt("Enter Access Key:");
+                if (pw === correctPassword) {
+                    setCookie("authorizedSession", "true", 3600000);
+                    return;
+                }
+            }
+
+            popup.classList.remove("hidden");
+            popup.classList.add("visible");
+            body.classList.add("no-scroll");
+        }, 1000);
+    }
 
     closeBtn.addEventListener("click", () => {
-      popup.classList.remove("visible");
-      popup.classList.add("hidden");
-      body.classList.remove("no-scroll");
+        popup.classList.remove("visible");
+        popup.classList.add("hidden");
+        body.classList.remove("no-scroll");
     });
 });
