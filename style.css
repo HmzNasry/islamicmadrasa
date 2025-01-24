@@ -2,12 +2,11 @@
 
 * {
   margin: 0;
-  padding: 0;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   box-sizing: border-box;
 }
 
 body {
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   font-family: "DM Serif Text", serif;
   font-weight: 400;
   font-style: regular;
@@ -28,6 +27,7 @@ body {
   z-index: 10;
   transition: 0.5s ease-in-out;
   padding-right: 10px;
+  border: none;
 }
 
 #navbar.scrolled {
@@ -206,7 +206,7 @@ body {
 section {
   position: relative;
   padding: 60px 20px;
-  min-height: 100%;
+  min-height: 100vh;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   width: 100vw;
@@ -226,7 +226,7 @@ section h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
+  min-height: 100vh;
   z-index: 2;
   border-top: 2px solid white;
   background: black;
@@ -380,7 +380,7 @@ body.loaded #loading-screen {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
+  min-height: 100vh;
   background: black;
 }
 
@@ -430,7 +430,7 @@ body.loaded #loading-screen {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
+  min-height: 100vh;
   background: black;
 }
 
@@ -456,7 +456,7 @@ body.loaded #loading-screen {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100%;
+  min-height: 100vh;
   background: black;
 }
 
@@ -508,17 +508,16 @@ body.loaded #loading-screen {
 
 
 #language-buttons {
-  bottom: 5%;
+  bottom: 10%;
   position: absolute;
   margin: auto;
   display: flex;
   justify-content: center;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid black;
   height: 30vh;
   border: none;
   flex-direction: column;
   width: 100%;
+  border: 2px solid red;
 }
 
 .language-btn {
