@@ -7,8 +7,6 @@ function updateTime(language = 'en') {
     };
     
     let formattedTime = now.toLocaleTimeString(language, options);
-    formattedTime = formattedTime.replace(/(AM|PM)/, '').trim(); // Remove AM/PM part
-
     time.textContent = formattedTime;
 }
 
@@ -153,9 +151,10 @@ window.addEventListener("load", () => {
 
 document.querySelectorAll('.language-btn').forEach(button => {
     button.addEventListener('click', function() {
+        document.querySelectorAll('.language-btn').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
         const selectedLang = this.getAttribute('data-lang');
         changeLanguage(selectedLang);
-        button.classList.add('active');
         updateTime(selectedLang);
     });
 });

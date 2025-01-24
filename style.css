@@ -208,16 +208,18 @@ body {
 
 #time {
   color: white;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  line-height: 1.5;
 }
 
 
 #time-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   height: 100%;
   width: 30%;
+  padding-left: 5px;
 }
 
 #logo {
@@ -338,6 +340,7 @@ section {
   min-height: 100vh;
   width: 100vw;
   z-index: 2;
+  border-top: 2px solid white;
 }
 
 section p {
@@ -426,10 +429,11 @@ section h1{
   z-index: 10000;
   opacity: 1;
   transition: opacity 1s ease-in-out;
-  background: rgba(0, 0, 0, 0.8); 
+  background: rgba(0, 0, 0, 0.7); 
   backdrop-filter: blur(50px); 
   -webkit-backdrop-filter: blur(50px); 
   will-change: backdrop-filter;
+  pointer-events: none;
 }
 
 #loading-screen svg {
