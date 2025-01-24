@@ -348,6 +348,7 @@ body.loaded #loading-screen {
 }
 
 #start {
+  border-top: none !important;
   display: flex;
   padding: 0px;
 }
