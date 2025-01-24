@@ -124,6 +124,7 @@ window.addEventListener("load", () => {
     const qualityText = document.getElementById("quality-text");
     qualityText.textContent = ''; 
     let index = 0;
+
     const typewriterEffect = () => {
         if (index < theTagline.length) {
             qualityText.textContent += theTagline.charAt(index);
@@ -133,8 +134,9 @@ window.addEventListener("load", () => {
     };
 
     qualityText.setAttribute("data-key", theTaglineId);
-
+    setTimeout(() => {
     typewriterEffect();
+},1000);
 });
 
 document.querySelectorAll('.language-btn').forEach(button => {
