@@ -1,18 +1,23 @@
+function updateTime(language = 'en') {
+    const now = new Date();
+    const options = {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true, 
+    };
+    
+    let formattedTime = now.toLocaleTimeString(language, options);
+    formattedTime = formattedTime.replace(/(AM|PM)/, '').trim(); // Remove AM/PM part
+
+    time.textContent = formattedTime;
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const time = document.getElementById('time');
-
-    const updateTime = () => {
-        const now = new Date();
-        const hours = now.getHours().toString().padStart(2, '0');
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const formattedTime = `${hours}:${minutes}`;
-        time.textContent = formattedTime;
-    };
-
     updateTime();
-    setInterval(updateTime, 60000);
+    setInterval(() => updateTime(), 60000);
 });
-
 
 
 function setNavbarStyle(isScrolled) {
@@ -79,14 +84,6 @@ Array.from(links).forEach(link => {
         console.log('Menu item clicked');
     });
 });
-
-Array.from(langButtons).forEach(btn => {
-    btn.addEventListener('click', () => {
-        Array.from(langButtons).forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-    });
-});
-
 
 if (window.scrollY === 0) {
     setNavbarStyle(false);
@@ -158,6 +155,8 @@ document.querySelectorAll('.language-btn').forEach(button => {
     button.addEventListener('click', function() {
         const selectedLang = this.getAttribute('data-lang');
         changeLanguage(selectedLang);
+        button.classList.add('active');
+        updateTime(selectedLang);
     });
 });
 
