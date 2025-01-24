@@ -14,6 +14,101 @@ body {
   overflow-x: hidden;
 }
 
+/* Popup container */
+
+.popup {
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.popup.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(rgba(0, 40, 70, 0.25), rgba(0, 0, 0, 0.2), rgba(15, 0, 55, 0.1), transparent);
+  animation: smoothMotion 50s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+.ei {
+  font-size: 1.5em;
+}
+
+/* New Keyframe Animation */
+@keyframes smoothMotion {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(-5%, -5%) scale(1.1) rotate(45deg);
+  }
+  50% {
+    transform: translate(10%, 10%) scale(1.05) rotate(90deg);
+  }
+  75% {
+    transform: translate(-10%, -10%) scale(1.15) rotate(135deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(180deg);
+  }
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 1.5em;
+  width: 50%;
+  z-index: 1; /* Ensures content stays above ::before */
+}
+
+
+
+
+
+
+.no-scroll {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.no-scroll * {
+  pointer-events: none;
+}
+
+.popup {
+  pointer-events: auto;
+}
+
+
+.hidden {
+  display: none;
+}
+
 #navbar {
   position: fixed;
   display: flex;
@@ -187,7 +282,7 @@ body {
   text-decoration: none;
   display: block;
   width: 100%;
-  padding: 20px 20px;
+  padding: 20px;
   transition: border-left 0.5s ease-in-out, background-color 0.5s ease-in-out;
   cursor: pointer;
   height: 10%;
@@ -404,11 +499,10 @@ body.loaded #loading-screen {
 
 
 #form-button {
-  display: flex; 
+  margin: auto;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: auto;
   margin-top: 10%;
   width: 40%;
   height: 2.5%;
@@ -483,7 +577,7 @@ body.loaded #loading-screen {
   top: 0;
   right: 0;
   width: 100vw;
-  height: 94vh;
+  height: 100%;
   top: 6vh;
   display: none;
   opacity: 0;
@@ -508,16 +602,14 @@ body.loaded #loading-screen {
 
 
 #language-buttons {
-  bottom: 10%;
+  bottom: 15%;
   position: absolute;
-  margin: auto;
   display: flex;
   justify-content: center;
   height: 30vh;
   border: none;
+  width: 97vw;
   flex-direction: column;
-  width: 100%;
-  border: 2px solid red;
 }
 
 .language-btn {

@@ -365,5 +365,37 @@ function scrollForClassInfo() {
     toggleMenue()
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const correctPassword = "devpasskey123"; 
+    const popup = document.getElementById("betaPopup");
+    const closeBtn = document.getElementById("closePopup");
+    const body = document.body;
+  
+    setTimeout(() => {
+      let attempts = 1; 
+      while (attempts > 0) {
+        let pw = prompt("Enter Access Key:");
+        if (pw === correctPassword) {
+          alert("Access Granted!");
+          return;
+        } else {
+          attempts--;
+          if (attempts > 0) {
+            alert(`Incorrect password. You have ${attempts} attempt(s) remaining.`);
+          }
+        }
+      }
+  
+ 
+      popup.classList.remove("hidden");
+      popup.classList.add("visible");
+      body.classList.add("no-scroll");
+    }, 1000);
+  
 
-
+    closeBtn.addEventListener("click", () => {
+      popup.classList.remove("visible");
+      popup.classList.add("hidden");
+      body.classList.remove("no-scroll");
+    });
+});

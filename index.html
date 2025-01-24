@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body >
+    <div id="betaPopup" class="popup hidden">
+        <div class="popup-content">
+          <p class="ei">⚠️</p>
+          <br>
+          <p>The site you are trying to acess is under development and is not ready for public access</p>
+          <br>
+        </div>
+      </div>
+
     <div id="loading-screen">
         <svg viewBox="25 25 50 50">
             <circle r="20" cy="50" cx="50"></circle>
@@ -30,10 +39,10 @@
 
     <div id="menu" class="hidden">
         <ul>
-            <li class="menu-options lb" onClick="scrollForAbout()"><a data-key="menu-about" data-rtl="true">About</a></li>
-            <li class="menu-options lb" onClick="scrollForRegister()"><a data-key="menu-register" data-rtl="true">Register</a></li>
-            <li class="menu-options lb" onClick="scrollForContact()"><a data-key="menu-contact" data-rtl="true">Contact</a></li>
-            <li class="menu-options lb" onClick="scrollForClassInfo()"><a data-key="menu-class-info" data-rtl="true">Class Info</a></li>
+            <li class="menu-options" onClick="scrollForAbout()"><a data-key="menu-about" data-rtl="true">About</a></li>
+            <li class="menu-options" onClick="scrollForRegister()"><a data-key="menu-register" data-rtl="true">Register</a></li>
+            <li class="menu-options" onClick="scrollForContact()"><a data-key="menu-contact" data-rtl="true">Contact</a></li>
+            <li class="menu-options" onClick="scrollForClassInfo()"><a data-key="menu-class-info" data-rtl="true">Class Info</a></li>
             <div id="language-buttons">
                 <button class="fapsbtn language-btn" data-lang="fa" data-key="fa-btn">فارسی</button>
                 <button class="fapsbtn language-btn" data-lang="ps" data-key="ps-btn">پښتو</button>
