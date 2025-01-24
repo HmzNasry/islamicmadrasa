@@ -231,7 +231,7 @@ body {
   align-items: center;
   justify-content: end;
   height: 100%;
-  width: 30%;
+  width: 20%;
   padding-left: 5px;
 }
 
@@ -299,8 +299,8 @@ body {
 #menu svg {
   top: 10%;
   position: relative;
-  width: 20%;
-  height: 70%;
+  width: 15%;
+  height: 50%;
   margin-right: 10px;
 }
 
@@ -412,7 +412,6 @@ section h1{
 #text {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   line-height: 1.6;
   letter-spacing: normal;
 }
@@ -695,9 +694,13 @@ body.loaded #loading-screen {
   color: white;
   text-align: center;
   z-index: 2;
-  font-size: 1rem;
+  font-size: 1.5rem;
   width: 90%;
   text-align: center;
+}
+
+#quality-text {
+  font-size: 1.5rem;
 }
 
 
