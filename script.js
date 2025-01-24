@@ -376,7 +376,6 @@ document.addEventListener("DOMContentLoaded", () => {
       while (attempts > 0) {
         let pw = prompt("Enter Access Key:");
         if (pw === correctPassword) {
-          alert("Access Granted!");
           return;
         } else {
           attempts--;

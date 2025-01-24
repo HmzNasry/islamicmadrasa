@@ -47,9 +47,9 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(rgba(0, 40, 70, 0.25), rgba(0, 0, 0, 0.2), rgba(15, 0, 55, 0.1), transparent);
+  background: linear-gradient(rgba(32, 0, 22, 0.25), rgba(0, 0, 0, 0.5), rgba(0, 33, 45, 0.1), transparent);
   animation: smoothMotion 50s infinite alternate ease-in-out;
-  z-index: -1;
+  z-index: 1;
 }
 
 .ei {
