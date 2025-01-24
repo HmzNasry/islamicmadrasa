@@ -394,6 +394,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (pw === correctPassword) {
                     setCookie("authorizedSession", "true", 3600000);
                     return;
+                } else {
+                    break
                 }
             }
 
