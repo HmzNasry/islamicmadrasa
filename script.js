@@ -106,26 +106,26 @@ window.addEventListener("load", loadScreen);
        
 window.addEventListener("load", () => {
     const taglines = [
-        { id: 0, text: "Inspiring growth through knowledge and integrity." },
-        { id: 1, text: "Shaping tomorrow's leaders with wisdom and virtue." },
-        { id: 2, text: "Nurturing minds with education and ethical values." },
-        { id: 3, text: "Cultivating the future through learning and character." },
-        { id: 4, text: "Empowering young minds with knowledge and respect." },
-        { id: 5, text: "Building a brighter future with education and morals." },
-        { id: 6, text: "Igniting passion for learning and ethical living." },
-        { id: 7, text: "Educating with purpose, inspiring with integrity." },
-        { id: 8, text: "Developing the leaders of tomorrow with wisdom and care." },
-        { id: 9, text: "Unlocking potential with knowledge and strong values." },
-        { id: 10, text: "Enlightening the path to success with knowledge and virtue." },
-        { id: 11, text: "Fostering minds of strength and wisdom for the future." },
-        { id: 12, text: "Guiding the next generation through education and morals." },
-        { id: 13, text: "Creating change through knowledge, compassion, and values." },
-        { id: 14, text: "Encouraging growth through learning and honor." },
-        { id: 15, text: "Inspiring students to lead with knowledge and compassion." },
-        { id: 16, text: "Educating future leaders with wisdom and character." },
-        { id: 17, text: "Cultivating curiosity and values for lifelong success." },
-        { id: 18, text: "Transforming lives through learning and ethical principles." },
-        { id: 19, text: "Developing character and intellect for a brighter tomorrow." }
+        { id: 0, text: "Inspiring growth through knowledge and integrity" },
+        { id: 1, text: "Shaping tomorrow's leaders with wisdom and virtue" },
+        { id: 2, text: "Nurturing minds with education and ethical values" },
+        { id: 3, text: "Cultivating the future through learning and character" },
+        { id: 4, text: "Empowering young minds with knowledge and respect" },
+        { id: 5, text: "Building a brighter future with education and morals" },
+        { id: 6, text: "Igniting passion for learning and ethical living" },
+        { id: 7, text: "Educating with purpose, inspiring with integrity" },
+        { id: 8, text: "Developing the leaders of tomorrow with wisdom and care" },
+        { id: 9, text: "Unlocking potential with knowledge and strong values" },
+        { id: 10, text: "Enlightening the path to success with knowledge and virtue" },
+        { id: 11, text: "Fostering minds of strength and wisdom for the future" },
+        { id: 12, text: "Guiding the next generation through education and morals" },
+        { id: 13, text: "Creating change through knowledge, compassion, and values" },
+        { id: 14, text: "Encouraging growth through learning and honor" },
+        { id: 15, text: "Inspiring students to lead with knowledge and compassion" },
+        { id: 16, text: "Educating future leaders with wisdom and character" },
+        { id: 17, text: "Cultivating curiosity and values for lifelong success" },
+        { id: 18, text: "Transforming lives through learning and ethical principles" },
+        { id: 19, text: "Developing character and intellect for a brighter tomorrow" }
     ];
 
  const randomTaglineObj = taglines[Math.floor(Math.random() * taglines.length)];

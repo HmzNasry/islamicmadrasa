@@ -84,7 +84,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.25rem;
   width: 80%;
   z-index: 1; 
 }
@@ -235,7 +235,7 @@ body {
   height: 100%;
   width: 100%;
   height: 80%;
-  font-size: 1rem;
+  font-size: 1.25rem;
   text-decoration: none;
   top: 50%;
   cursor: pointer;
@@ -354,11 +354,11 @@ section {
 }
 
 section p {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 section h1{
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 #about {
@@ -378,7 +378,7 @@ section h1{
   box-shadow: 10px 10px 10px rgb(0, 0, 0);
   color: black;
   width: 40vh;
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   letter-spacing: normal;
   overflow-y: auto;
@@ -387,14 +387,14 @@ section h1{
 }
 
 #about-box p {
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 #about-box a {
   text-decoration: underline;
   color: rgb(145, 123, 0);
   text-align: right;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 #about-us-title {
@@ -477,7 +477,7 @@ body.loaded #loading-screen {
   padding: 0px;
 }
 
-/* #start img {
+ #start img {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -486,19 +486,20 @@ body.loaded #loading-screen {
   object-position: center;
   opacity: 0.8;
   z-index: -2;
-} */
+  filter: blur(10px);
+}
 
-/*#start::before {
+#start::before {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1) 100%);
+  background: radial-gradient( rgba(255, 238, 178, 0), rgba(0, 0, 0, 1) 100%);
   z-index: -1;
   pointer-events: none;
-}*/
+}
 
 #register {
   display: flex;
@@ -516,7 +517,7 @@ body.loaded #loading-screen {
   box-shadow: 10px 10px 10px rgb(0, 0, 0);
   color: black;
   width: 40vh;
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   letter-spacing: normal;
   overflow-y: auto;
@@ -543,7 +544,7 @@ body.loaded #loading-screen {
   text-align: center;
   transition: 0.5s ease-in-out;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.25rem;
   background: black;
 }
 
@@ -572,7 +573,7 @@ body.loaded #loading-screen {
   box-shadow: 10px 10px 10px rgb(0, 0, 0);
   color: black;
   width: 40vh;
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   letter-spacing: normal;
   overflow-y: auto;
@@ -597,7 +598,7 @@ body.loaded #loading-screen {
   box-shadow: 10px 10px 10px rgb(0, 0, 0);
   color: black;
   width: 40vh;
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   letter-spacing: normal;
   overflow-y: auto;
@@ -693,8 +694,12 @@ body.loaded #loading-screen {
   text-align: center;
 }
 
+#start-title {
+  font-size: 3rem;
+}
+
 #quality-text {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 
@@ -774,7 +779,8 @@ footer div h1 {
 }
 
  footer div span {
-  font-size: 0.6em;
+  font-size: 1rem;
+  font-weight: 1;
 }
 
 footer hr {
