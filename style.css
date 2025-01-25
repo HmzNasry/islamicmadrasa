@@ -60,8 +60,8 @@ body {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(rgba(32, 0, 22, 0.25), rgba(0, 0, 0, 0.5), rgba(0, 33, 45, 0.1), transparent);
-  animation: smoothMotion 50s infinite alternate ease-in-out;
+  background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(19, 0, 6, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 14, 19, 0.5), rgba(0, 0, 0, 0.5), transparent);
+  animation: moveVertical 10s infinite ease-in-out;
   z-index: 1;
 }
 
@@ -69,21 +69,11 @@ body {
   font-size: 1.85rem;
 }
 
-@keyframes smoothMotion {
+@keyframes moveVertical {
   0% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-  }
-  25% {
-    transform: translate(-5%, -5%) scale(1.1) rotate(45deg);
-  }
-  50% {
-    transform: translate(10%, 10%) scale(1.05) rotate(90deg);
-  }
-  75% {
-    transform: translate(-10%, -10%) scale(1.15) rotate(135deg);
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(180deg);
+    transform: rotateZ(0deg);
+  } 100% {
+    transform: rotateZ(360deg);
   }
 }
 
