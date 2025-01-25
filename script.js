@@ -337,13 +337,9 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             const span = option.querySelector('span');
             if (svg && span) {
                 if (language === 'fa' || language === 'ps') {
-                    svg.style.marginRight = ('0px');
                     option.appendChild(svg); 
-                    svg.style.marginLeft = ('20px');
                 } else {
-                    svg.style.marginLeft = ('0px')
                     option.insertBefore(svg, span); 
-                    svg.style.marginRight = ('20px');
                 }
             }
         });
