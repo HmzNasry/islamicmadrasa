@@ -709,7 +709,7 @@ body.loaded #loading-screen {
 #arrow {
   position: absolute;
   font-size: 2rem;
-  top: 90%;
+  top: 80%;
   left: 50%;
   z-index: 2;
   animation: jumping 2s ease-in-out infinite;
