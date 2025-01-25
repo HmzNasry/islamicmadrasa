@@ -211,6 +211,10 @@ body {
   background-color: black;
 }
 
+.menu-open #time {
+  color: black;
+}
+
 #time {
   color: white;
   font-size: 1.2em;
