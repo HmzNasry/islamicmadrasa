@@ -44,8 +44,10 @@ function toggleMenue() {
         menu.classList.add('active');
         hamburger.classList.add('active');
         navbar.classList.add('menu-open'); 
+        document.body.classList.add('no-scroll');
     } else {
         setTimeout(() => {
+            document.body.classList.remove('no-scroll');
             menu.classList.add('hidden');
             menu.classList.remove('active');
             hamburger.classList.remove('active');
