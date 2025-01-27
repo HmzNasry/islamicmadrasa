@@ -306,9 +306,10 @@ body.no-scroll {
 #menu svg {
   top: 10%;
   position: relative;
-  width: 15%;
-  height: 50%;
-  margin-right: 10px;
+  width: auto;
+  height: 40%;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 
@@ -324,9 +325,12 @@ body.no-scroll {
 }
 
 #menu ul {
-  height: 80%;
+  height: 90%;
   list-style-type: none;
   overflow-y: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5%;
 }
 
 
@@ -337,7 +341,6 @@ body.no-scroll {
   text-decoration: none;
   display: block;
   width: 100%;
-  padding-top: 20px;
   transition: 0.5s ease-in-out;
   cursor: pointer;
   height: 12.5%;
@@ -504,7 +507,7 @@ body.loaded #loading-screen {
   -webkit-backdrop-filter: blur(10px); 
 }
 
-/*#start::before {
+#start::before {
   content: '';
   position: fixed;
   top: 0;
@@ -514,7 +517,7 @@ body.loaded #loading-screen {
   background: radial-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
   z-index: 2;
   pointer-events: none;
-}*/
+}
 
 #register {
   display: flex;
@@ -661,7 +664,6 @@ body.loaded #loading-screen {
   width: 100vw;
   flex-direction: column;
   transition: 0.5s ease-in-out;
-  border: 2px solid red;
 }
 
 .language-btn {
