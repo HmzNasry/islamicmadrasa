@@ -313,7 +313,6 @@ body.no-scroll {
 
 
 #menu {
-  padding: 25px;
   margin-top: 2vh;
   position: fixed;
   right: 0;
@@ -505,7 +504,7 @@ body.loaded #loading-screen {
   -webkit-backdrop-filter: blur(10px); 
 }
 
-#start::before {
+/*#start::before {
   content: '';
   position: fixed;
   top: 0;
@@ -515,7 +514,7 @@ body.loaded #loading-screen {
   background: radial-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
   z-index: 2;
   pointer-events: none;
-}
+}*/
 
 #register {
   display: flex;
@@ -659,10 +658,10 @@ body.loaded #loading-screen {
   justify-content: center;
   height: 30vh;
   border: none;
-  width: 97vw;
+  width: 100vw;
   flex-direction: column;
   transition: 0.5s ease-in-out;
-
+  border: 2px solid red;
 }
 
 .language-btn {
