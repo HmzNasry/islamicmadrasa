@@ -99,10 +99,13 @@ function scrollDown() {
 }
 
 function loadScreen() {
-        setTimeout(() => {
-            document.body.classList.add("loaded");
-            document.getElementById("loading-screen").style.opacity = '0';
-        }, 1000);
+    document.body.classList.add("loading"); 
+    setTimeout(() => {
+        document.body.classList.remove("loading"); 
+        document.body.classList.add("loaded"); 
+        document.getElementById("loading-screen").style.opacity = '0';
+        document.getElementById("loading-screen").style.pointerEvents = 'none'; 
+    }, 1000); 
 }
 
 window.addEventListener("load", loadScreen);
