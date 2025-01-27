@@ -90,9 +90,11 @@ if (window.scrollY === 0) {
 }
 
 function scrollDown() {
-    window.scroll({
-        top: window.innerHeight,
-        behavior: 'smooth'
+    const aboutSection = document.getElementById("about");
+    const aboutOffsetTop = aboutSection.offsetTop - navbarHeight;
+    window.scrollTo({
+        top: aboutOffsetTop,
+        behavior: "smooth"
     });
 }
 
