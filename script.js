@@ -407,34 +407,53 @@ function getCookie(name) {
     return null;
 }
 
+// document.addEventListener("DOMContentLoaded", () => {
+//     const correctPassword = "devpasskey123";
+//     const popup = document.getElementById("betaPopup");
+//     const closeBtn = document.getElementById("closePopup");
+//     const body = document.body;
+
+//     if (!getCookie("authorizedSession")) {
+//         setTimeout(() => {
+//             let attempts = 1;
+//             while (attempts > 0) {
+//                 const pw = prompt("Enter Access Key:");
+//                 if (pw === correctPassword) {
+//                     setCookie("authorizedSession", "true", 3600000);
+//                     return;
+//                 } else {
+//                     break
+//                 }
+//             }
+
+//             popup.classList.remove("hidden");
+//             popup.classList.add("visible");
+//             body.classList.add("no-scroll");
+//         }, 1000);
+//     }
+
+//     closeBtn.addEventListener("click", () => {
+//         popup.classList.remove("visible");
+//         popup.classList.add("hidden");
+//         body.classList.remove("no-scroll");
+//     });
+//});
+
 document.addEventListener("DOMContentLoaded", () => {
-    const correctPassword = "devpasskey123";
-    const popup = document.getElementById("betaPopup");
-    const closeBtn = document.getElementById("closePopup");
-    const body = document.body;
-
-    if (!getCookie("authorizedSession")) {
-        setTimeout(() => {
-            let attempts = 1;
-            while (attempts > 0) {
-                const pw = prompt("Enter Access Key:");
-                if (pw === correctPassword) {
-                    setCookie("authorizedSession", "true", 3600000);
-                    return;
-                } else {
-                    break
-                }
-            }
-
-            popup.classList.remove("hidden");
-            popup.classList.add("visible");
-            body.classList.add("no-scroll");
-        }, 1000);
-    }
-
-    closeBtn.addEventListener("click", () => {
-        popup.classList.remove("visible");
-        popup.classList.add("hidden");
-        body.classList.remove("no-scroll");
-    });
-});
+    const fadeElements = document.querySelectorAll(".fade-in");
+  
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); 
+          }
+        });
+      },
+      { threshold: 0.2 } 
+    );
+  
+    fadeElements.forEach((el) => observer.observe(el));
+  });
+  
