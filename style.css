@@ -448,7 +448,9 @@ section h1{
   z-index: 10000;
   opacity: 1;
   transition: opacity 1s ease-in-out;
-  background: rgba(0, 0, 0, 0.9.5); 
+  background: rgba(0, 0, 0, 0.9); 
+  backdrop-filter: blur(30px); 
+  -webkit-backdrop-filter: blur(30px); 
   pointer-events: none;
   cursor: progress;
 }
