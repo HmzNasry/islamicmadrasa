@@ -222,6 +222,8 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "menu-class-info": "Class Info",
             "class-info-title": "Class Info",
             "class-info-description": "Information about the classrooms",
+            "footer-d": "Icons made by <a href=\"https://www.svgrepo.com/\" target=\"_blank\">SVG Repo</a> under a <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" target=\"_blank\">CC0 License</a>.<br>Disclaimer: Image used does not represent the organization and is for visual purposes only"
+
         },
         fa: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
@@ -265,7 +267,7 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "menu-class-info": "معلومات صنف",
             "class-info-title": "معلومات صنف",
             "class-info-description": "معلومات درباره صنف‌ها",
-            
+            "footer-d": "آیکون‌ها ساخته شده توسط <a href=\"https://www.svgrepo.com/\" target=\"_blank\">SVG Repo</a> تحت <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" target=\"_blank\">جواز CC0</a>.<br>سلب مسئولیت: تصویر استفاده شده نمایانگر سازمان نیست و فقط برای مقاصد بصری می‌باشد."
         },
         ps: {
             logoText: "ٱقْرَأْ بِٱسْمِ رَبِّكَ ٱلَّذِى خَلَقَ",
@@ -309,6 +311,7 @@ function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
             "menu-class-info": "ټولګی معلومات",
             "class-info-title":"ټولګی معلومات",
             "class-info-description": "د ټولګیو په اړه معلومات",
+            "footer-d": "شمایلونه د <a href=\"https://www.svgrepo.com/\" target=\"_blank\">SVG Repo</a> لخوا جوړ شوي دي، د <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" target=\"_blank\">CC0 جواز</a> لاندې.<br>مسئولیت رد: کارول شوې انځور د سازمان استازیتوب نه کوي او یوازې د بصري موخو لپاره دی."
         }
     };
     if (!languageData[language]) {

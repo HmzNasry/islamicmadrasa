@@ -825,6 +825,7 @@ footer hr {
   padding: 10px;
   font-size: 0.9rem; 
   border-top: 1px solid #ddd;
+  direction: rtl;
 }
 
 #attribution-container a {
