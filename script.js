@@ -169,7 +169,6 @@ document.querySelectorAll('.language-btn').forEach(button => {
 function changeLanguage(language, events = [toggleMenue(), loadScreen]) {
 
     document.body.classList.remove("loaded");
-    window.scrollTo(0, 0);
     const loader = document.getElementById("loading-screen");
     loader.style.opacity = '1';
 
